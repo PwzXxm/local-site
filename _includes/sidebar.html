@@ -1,0 +1,69 @@
+<div class="side-bar">
+  <div class="aboutme">
+    <div class="about-above">
+    </div>
+    <div class="about-img">
+      {% if page.is_default_language %}
+      <a href="/about"><img src="/img/about-me-small.png" /></a>
+      {% else %}
+      <a href="/cn/about"><img src="/img/about-me-small.png" /></a>
+      {% endif %}
+    </div>
+
+    <div class="about-below">
+    </div>
+  </div>
+
+  <div class="tags">
+    <h3><a href="/tags">
+      {% if page.is_default_language %}
+      <a href="/tags">Tags</a>
+      {% else %}
+      <a href="/cn/tags">全部标签</a>
+      {% endif %}
+    </a></h3>
+    <ul class="blog-tags-list">
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+      {% assign t = tag | first %}
+      {% assign posts = tag | last %}
+      <li class="blog-tag-item" id="{{ t }}-item">
+        <a href onclick="filter('{{ t }}'); return false;">{{ t }}</a>
+        <script>
+        function filter(tag) {
+          setActiveTag(tag);
+          showContainer(tag);
+        }
+        function setActiveTag(tag) {
+          // loop through all items and remove active class
+          var items = document.getElementsByClassName('blog-tag-item');
+          for(var i=0; i < items.length; i++) {
+            items[i].setAttribute('class', 'blog-tag-item');
+          }
+
+          // set the selected tag's item to active
+          var item = document.getElementById(tag + '-item');
+          if(item) {
+            item.setAttribute('class', 'blog-tag-item active');
+          }
+        }
+
+        function showContainer(tag) {
+          // loop through all lists and hide them
+          var lists = document.getElementsByClassName('blog-list-container');
+          for(var i=0; i < lists.length; i++) {
+            lists[i].setAttribute('class', 'blog-list-container hidden');
+          }
+
+          // remove the hidden class from the list corresponding to the selected tag
+          var list = document.getElementById(tag + '-container');
+          if(list) {
+            list.setAttribute('class', 'blog-list-container');
+          }
+        }
+        </script>
+      </li>
+      {% endfor %}
+    </ul>
+</div>
+</div>

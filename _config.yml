@@ -1,0 +1,36 @@
+# Site settings
+title: PwzXxm
+email: cepheidfov@gmail.com
+description: ʕ •ᴥ•ʔ
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://pwzxxm.com" # the base hostname & protocol for your site
+github_username:  PwzXxm
+
+# multi-lang
+gems:           ['jekyll-multiple-languages']
+languages:          ['en', 'cn']
+# If not config, the first of languages will be the default
+language_default:   'en'
+fill_default_content: true
+
+
+# pagination
+paginate: 10
+paginate_limit: 5
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+defaults:
+  -
+    scope:
+      path: _posts/en
+    values:
+      layout: default
+      lang: en
+  -
+    scope:
+      path: _posts/zh
+    values:
+      layout: default
+      lang: zh

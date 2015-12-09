@@ -1,0 +1,22 @@
+<header class="site-header">
+
+  <div class="wrapper">
+
+    {% if page.is_default_language %}
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    {% else %}
+    <a class="site-title" href="{{ site.baseurl }}/cn">{{ site.title }}</a>
+    {% endif %}
+
+    <nav class="site-nav">
+      <a href="{{ page.url_no_language }}">EN</a>
+      {% if page.is_default_language %}
+      <a href="{{ site.baseurl }}/cn{{ page.url }}">中</a>
+      {% else %}
+      <a href="{{ page.url }}">中</a>
+      {% endif %}
+    </nav>
+
+  </div>
+
+</header>

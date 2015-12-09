@@ -1,0 +1,54 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="col1-list">
+          {{ site.description }}
+          <li>
+            {% if page.is_default_language %}
+            <a href="/tags">Tags</a>
+            {% else %}
+            <a href="/cn/tags">标签们</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if page.is_default_language %}
+            <a href="/about">About</a>
+            {% else %}
+            <a href="/cn/about">关于我</a>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="col2-list">
+          <li>
+            {% include icon-email.html %}
+          </li>
+          <li>
+            {% include icon-rss.html %}
+          </li>
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <ul class="col3-list">
+          <li>© 2015 PwzXxm All Rights Reserved.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
