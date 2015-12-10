@@ -9,4 +9,4 @@ Since github pages runs Jekyll in safe mode and does not support plugins. We nee
 4. touch *.nojekyll* to disable github to generate the site
 5. commit all changes.
 
-** Visit [my blog](www.pwzxxm.com) for details
+**Visit [blog](www.pwzxxm.com) for details**
