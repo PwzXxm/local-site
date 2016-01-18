@@ -20,6 +20,8 @@ layout: default
                 {% endfor %}
             </div>
             <div class="post-data">
+                {% assign image = post.images[0] %}
+                {% include image.html image=image %}
                 {{ post.excerpt | truncatewords: 50 }}
             </div>
             {% if post.content contains site.excerpt_separator %}
