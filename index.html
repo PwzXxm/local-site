@@ -13,7 +13,7 @@ layout: default
                 {{ post.excerpt | truncatewords: 100 }}
             </div>
             <div class="post-meta">
-                Posted on {{ post.date | date: "%b %-d, %Y" }}&nbsp
+                Posted on {{ post.date | date: "%b %-d, %Y" }}&nbsp&nbsp&nbsp
                 {% assign sorted_tags = post.tags | sort %}
                 {% for tag in sorted_tags %}
                 <a href="/tags/#{{ tag }}">{{ tag }}</a>
